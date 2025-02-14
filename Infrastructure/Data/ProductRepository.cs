@@ -48,7 +48,7 @@ public class ProductRepository(StoreContext context) : IProductRepository
         };
         return await query.ToListAsync();
     }
-
+    
     public async Task<IReadOnlyList<string>> GetTypesAsync()
     {
         return await context.Products.Select(x => x.Type)
