@@ -1,3 +1,28 @@
+@use "@angular/material" as mat;
+
 @tailwind base;
 @tailwind components;
-@tailwinds utilities;
+@tailwind utilities;
+
+/* Подключаем Material core */
+@include mat.core();
+
+/* Указываем базовую тему */
+html {
+  --mdc-theme-primary: #3f51b5; /* Indigo */
+  --mdc-theme-accent: #e91e63; /* Pink */
+}
+
+/* Переопределяем стили кнопок */
+.custom-theme {
+  .mat-mdc-button,
+  .mat-mdc-raised-button,
+  .mat-mdc-outlined-button,
+  .mat-mdc-unelevated-button {
+    @apply rounded-md;
+  }
+}
+
+.container {
+  @apply mx-auto max-w-screen-2xl;
+}
